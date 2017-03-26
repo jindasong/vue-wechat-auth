@@ -1,7 +1,7 @@
 {
   "name": "vue-wechat-auth",
   "version": "1.0.1",
-  "description": "vue微信授权插件",
+  "description": "基于vue开发的微信单页应用授权插件",
   "author": "jinda.song <310676645@qq.com>",
   "main": "./index.js",
   "scripts": {
@@ -55,6 +55,10 @@
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.16.1",
     "webpack-merge": "^2.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/310676645/vue-wechat-auth"
   },
   "engines": {
     "node": ">= 4.0.0",
