@@ -17,7 +17,10 @@ class WeChatAuth {
     this.config = Object.assign(defaultConfig, config)
   }
 
-  openAuthPage (redirectUri = encodeURIComponent(window.location.href)) {
+  openAuthPage (redirectUri = window.location.href) {
+    let redirectUriArr = redirectUri.split('#')
+    window.sessionStorage.setItem('redirect_path', redirectUriArr[1])
+    redirectUri = encodeURIComponent(redirectUriArr[0])
     this.removeAccessToken()
     this.removeAuthCode()
     let authPageBaseUri = 'https://open.weixin.qq.com/connect/oauth2/authorize'
@@ -102,7 +105,7 @@ class WeChatAuth {
   }
 
   getCodeCallback (next) {
-    return this.config.getCodeCallback(this.getAuthCode(), this.next(next))
+    return this.config.getCodeCallback(this.getAuthCode(), this.next(next), window.sessionStorage.getItem('redirect_path'))
   }
 }
 

@@ -9,7 +9,7 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    'vue-wechat-auth': './src/index.js'
+    'vue-wechat-auth': './src/common.js'
   },
   output: {
     path: config.build.assetsRoot,

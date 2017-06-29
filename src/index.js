@@ -27,7 +27,7 @@ export default {
       let authCode = weChatAuth.getAuthCode()
       if ((!to.meta || !to.meta.auth) && !authCode) return true
       if (!authCode && !weChatAuth.getAccessToken()) {
-        weChatAuth.openAuthPage(encodeURIComponent(window.location.href))
+        weChatAuth.openAuthPage(window.location.href)
         return false
       } else if (authCode && !weChatAuth.getAccessToken()) {
         weChatAuth.getCodeCallback(next)
